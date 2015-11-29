@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/delyand-work/.vim/bundle/vim-soy'
+let g:netrw_dirhist_2='/Users/delyand-work/.m2'
+let g:netrw_dirhist_3='/Users/delyand-work/Dev'
+let g:netrw_dirhist_4='/Users/delyand-work/Dev/Projects/Leanplum/Server/static/js/controllers'
+let g:netrw_dirhist_5='/Users/delyand-work/Dev/Projects/Leanplum/Server/dashboard'
+let g:netrw_dirhist_6='/Users/delyand-work/Dev/Projects/Leanplum/Server/pipeline'
