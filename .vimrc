@@ -9,7 +9,6 @@ set expandtab       " substitute spaces for tabs
 " Turn things on.  We need to run `filetype off` first because vim defaults
 " to `filetype on`, and unless we toggle it, our custom filetype detections
 " won't be run.
-  filetype off
   filetype indent plugin on
   syntax enable
 
@@ -45,6 +44,8 @@ set expandtab       " substitute spaces for tabs
 
   " maps // to search for selected text in visual mode
   vnoremap // y/<C-R>"<CR>
+
+  set clipboard=unnamed
 
 """"""""""""""""""""""""""""""""""""""""""
 " Miscellaneous
