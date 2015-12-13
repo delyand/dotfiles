@@ -1,16 +1,12 @@
 "Highlight bad spaces
 let c_space_errors=1
 
+syntax enable
+
 set shiftwidth=2    " two spaces per indent
 set tabstop=2       " number of spaces per tab in display
 set softtabstop=2   " number of spaces per tab when inserting
 set expandtab       " substitute spaces for tabs
-
-" Turn things on.  We need to run `filetype off` first because vim defaults
-" to `filetype on`, and unless we toggle it, our custom filetype detections
-" won't be run.
-  filetype indent plugin on
-  syntax enable
 
   " Display.
   set ruler           " show cursor position
@@ -45,7 +41,11 @@ set expandtab       " substitute spaces for tabs
   " maps // to search for selected text in visual mode
   vnoremap // y/<C-R>"<CR>
 
+  " OS X cplipboard
   set clipboard=unnamed
+
+  " no folding please
+  set nofoldenable    
 
 """"""""""""""""""""""""""""""""""""""""""
 " Miscellaneous
@@ -64,3 +64,29 @@ if g:fb_kill_whitespace
     \ au BufWritePre <buffer>
     \ :call <SID>StripTrailingWhitespaces()
 endif
+
+"""""""""""
+" Vundle
+"""""""""""
+
+" be iMproved, required
+set nocompatible              
+
+" required
+filetype off                  
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Soy
+Plugin 'duganchen/vim-soy'
+
+" Javascript
+Plugin 'pangloss/vim-javascript'
+
+call vundle#end()            
+filetype plugin indent on    
