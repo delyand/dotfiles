@@ -88,5 +88,8 @@ Plugin 'duganchen/vim-soy'
 " Javascript
 Plugin 'pangloss/vim-javascript'
 
+" Jade templates
+Plugin 'digitaltoad/vim-jade'
+
 call vundle#end()            
 filetype plugin indent on    
