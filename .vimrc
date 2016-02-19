@@ -94,5 +94,11 @@ Plugin 'pangloss/vim-javascript'
 " Jade templates
 Plugin 'digitaltoad/vim-jade'
 
+" Scala syntax
+Plugin 'derekwyatt/vim-scala'
+
+" Flatbuffer schemas
+Plugin 'dcharbon/vim-flatbuffers'
+
 call vundle#end()            
 filetype plugin indent on    
