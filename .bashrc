@@ -4,7 +4,7 @@ shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 # arcanist setup
-export PATH=$PATH:/Users/delyand-work/Dev/tools/arcanist/bin:/Applications/Dev/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine:/Users/delyand-work/Dev/tools/appengine-java-sdk-1.9.27/bin/:~/.local/lib/aws/bin:$HOME/Dev/tools/gsutil:/Users/delyand-work/Dev/tools/apache-cassandra-2.2.2/bin:
+export PATH=$PATH:/Users/delyand-work/Dev/tools/arcanist/bin:/Applications/Dev/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine:/Users/delyand-work/Dev/tools/appengine-java-sdk-1.9.27/bin/:~/.local/lib/aws/bin:$HOME/Dev/tools/gsutil:/Users/delyand-work/Dev/tools/apache-cassandra-2.2.2/bin:/usr/local/opt/ruby/bin:
 source /Users/delyand-work/Dev/tools/arcanist/resources/shell/bash-completion
 
 # java home
