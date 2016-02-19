@@ -14,3 +14,5 @@ fi
 
 # vim for arc diff
 export EDITOR=vim
+
+alias 'ls'='ls -a'
