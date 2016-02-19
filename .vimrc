@@ -100,5 +100,8 @@ Plugin 'derekwyatt/vim-scala'
 " Flatbuffer schemas
 Plugin 'dcharbon/vim-flatbuffers'
 
+" NerdTree - filesystem tree
+Plugin 'scrooloose/nerdtree'
+
 call vundle#end()            
 filetype plugin indent on    
