@@ -6,8 +6,8 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 # Colors
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
-PS1='\[\e[0;32m\]\u@\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[0;30m\]'
 export TERM=xterm-256color
+PS1='\[\e[0;32m\]\u\[\e[m\]\[\e[0;36m\]@\[\e[m\]\[\e[0;32m\]\h\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[0;30m\]'
 
 # Git autocomplete
 if [ -f ~/.git-completion.bash ]; then
