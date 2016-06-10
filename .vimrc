@@ -52,6 +52,9 @@ set nofoldenable
 " command autocomplete
 set wildmenu
 
+" Enable mouse
+set mouse=a
+
 """"""""""""""""""""""""""""""""""""""""""
 " Miscellaneous
 """"""""""""""""""""""""""""""""""""""""""
