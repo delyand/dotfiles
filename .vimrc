@@ -23,6 +23,8 @@ set sidescroll=10   " minumum columns to scroll horizontally
 " Search.
 set nohlsearch      " don't persist search highlighting
 set incsearch       " search with typeahead
+set smartcase       " search case-sensitive only when capital letters are used
+set ignorecase      " has to be set in order for smartcase to work like described ^
 
 " Indent.
 set autoindent      " carry indent over to new lines
@@ -41,7 +43,7 @@ set modelines=0       " modelines are bad for your health
 " maps // to search for selected text in visual mode
 vnoremap // y/<C-R>"<CR>
 
-" OS X cplipboard
+" copy to OS X cplipboard
 set clipboard=unnamed
 
 " no folding please
@@ -63,7 +65,7 @@ if g:fb_kill_whitespace
     %s/\s\+$//e
     call cursor(l, c)
   endfu
-  au FileType c,cabal,cpp,haskell,javascript,php,python,ruby,readme,tex,text,thrift
+  au FileType c,cabal,cpp,haskell,javascript,php,python,ruby,readme,tex,text,thrift,xml
     \ au BufWritePre <buffer>
     \ :call <SID>StripTrailingWhitespaces()
 endif
@@ -103,5 +105,30 @@ Plugin 'dcharbon/vim-flatbuffers'
 " NerdTree - filesystem tree
 Plugin 'scrooloose/nerdtree'
 
+" Control-P - search files in vim with control-p
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" IDK, ag for vim
+Plugin 'rking/ag.vim'
+
 call vundle#end()            
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" Search with Ag
+noremap <leader>s :Ag
+
+" bind K to grep word under the cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
+
 filetype plugin indent on    

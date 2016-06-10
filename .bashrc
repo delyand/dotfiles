@@ -18,3 +18,8 @@ fi
 export EDITOR=vim
 
 alias 'ls'='ls -a'
+alias vim="/usr/local/bin/vim"
+alias 'gitst'='git status'
+alias 'mvnci'='mvn clean install'
+alias 'mvncc'='mvn clean compile'
+
