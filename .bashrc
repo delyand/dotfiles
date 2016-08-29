@@ -17,9 +17,11 @@ fi
 # vim for arc diff
 export EDITOR=vim
 
-alias 'ls'='ls -a'
+# Homebrew options
+export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
+
+alias 'ls'='ls -la'
 alias vim="/usr/local/bin/vim"
-alias 'gitst'='git status'
 alias 'mvnci'='mvn clean install'
 alias 'mvncc'='mvn clean compile'
 
