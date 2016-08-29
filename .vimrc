@@ -134,4 +134,7 @@ noremap <leader>s :Ag
 " bind K to grep word under the cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
+" Autostart NERDTree
+autocmd VimEnter * NERDTree
+
 filetype plugin indent on    
