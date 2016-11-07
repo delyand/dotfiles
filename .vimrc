@@ -44,7 +44,8 @@ set modelines=0       " modelines are bad for your health
 vnoremap // y/<C-R>"<CR>
 
 " copy to OS X cplipboard
-set clipboard=unnamed
+" DOES NOT WORK WITH SIERRA AND TMUX
+" set clipboard=unnamed
 
 " no folding please
 set nofoldenable    
@@ -114,6 +115,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " IDK, ag for vim
 Plugin 'rking/ag.vim'
 
+" Syntastic
+Plugin 'scrooloose/syntastic'
+
 call vundle#end()            
 
 " The Silver Searcher
@@ -136,5 +140,8 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
 " Autostart NERDTree
 autocmd VimEnter * NERDTree
+
+" Quit if NERDTree is the last open buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 filetype plugin indent on    
