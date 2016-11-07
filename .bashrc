@@ -22,6 +22,4 @@ export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
 
 alias 'ls'='ls -la'
 alias vim="/usr/local/bin/vim"
-alias 'mvnci'='mvn clean install'
-alias 'mvncc'='mvn clean compile'
 
