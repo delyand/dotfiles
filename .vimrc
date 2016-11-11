@@ -140,6 +140,8 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
 " Autostart NERDTree
 autocmd VimEnter * NERDTree
+" Go to previous (last accessed) window.
+autocmd VimEnter * wincmd p
 
 " Quit if NERDTree is the last open buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
