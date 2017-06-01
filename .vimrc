@@ -21,7 +21,6 @@ set scrolljump=5    " scroll five lines at a time vertically
 set sidescroll=10   " minumum columns to scroll horizontally
 
 " Search.
-set nohlsearch      " don't persist search highlighting
 set incsearch       " search with typeahead
 set smartcase       " search case-sensitive only when capital letters are used
 set ignorecase      " has to be set in order for smartcase to work like described ^
@@ -103,20 +102,20 @@ Plugin 'digitaltoad/vim-jade'
 " Scala syntax
 Plugin 'derekwyatt/vim-scala'
 
-" Flatbuffer schemas
+" Flatbuffer schema syntax
 Plugin 'dcharbon/vim-flatbuffers'
 
 " NerdTree - filesystem tree
 Plugin 'scrooloose/nerdtree'
+
+" NERDTree and tabs together in Vim
+Bundle 'jistr/vim-nerdtree-tabs'
 
 " Control-P - search files in vim with control-p
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " IDK, ag for vim
 Plugin 'rking/ag.vim'
-
-" Syntastic
-Plugin 'scrooloose/syntastic'
 
 call vundle#end()            
 
@@ -140,6 +139,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
 " Autostart NERDTree
 autocmd VimEnter * NERDTree
+
 " Go to previous (last accessed) window.
 autocmd VimEnter * wincmd p
 
