@@ -24,6 +24,7 @@ set sidescroll=10   " minumum columns to scroll horizontally
 set incsearch       " search with typeahead
 set smartcase       " search case-sensitive only when capital letters are used
 set ignorecase      " has to be set in order for smartcase to work like described ^
+set hlsearch        " highlight search matches
 
 " Indent.
 set autoindent      " carry indent over to new lines
@@ -117,6 +118,15 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " IDK, ag for vim
 Plugin 'rking/ag.vim'
 
+" Git blame
+Plugin 'tpope/vim-fugitive'
+
+" JSON syntax
+Plugin 'elzr/vim-json'
+
+" Log highlighting
+Plugin 'dzeban/vim-log-syntax'
+
 call vundle#end()            
 
 " The Silver Searcher
@@ -145,5 +155,9 @@ autocmd VimEnter * wincmd p
 
 " Quit if NERDTree is the last open buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" NERDTree root as CtrlP root
+let g:NERDTreeChDirMode       = 2
+let g:ctrlp_working_path_mode = 'rw'
 
 filetype plugin indent on    
