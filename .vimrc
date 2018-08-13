@@ -10,11 +10,12 @@ set expandtab       " substitute spaces for tabs
 
 " Display.
 set ruler           " show cursor position
-set nonumber        " hide line numbers
+set number          " show line numbers
 set nolist          " hide tabs and EOL chars
 set showcmd         " show normal mode commands as they are entered
 set showmode        " show editing mode in status (-- INSERT --)
 set showmatch       " flash matching delimiters
+set cursorline      " highlight current line
 
 " Scrolling.
 set scrolljump=5    " scroll five lines at a time vertically
@@ -30,7 +31,7 @@ set hlsearch        " highlight search matches
 set autoindent      " carry indent over to new lines
 
 " Other.
-set noerrorbells      " no bells in terminal
+set noerrorbells    " no bells in terminal
 
 set backspace=indent,eol,start  " backspace over everything
 set tags=tags;/       " search up the directory tree for tags
@@ -42,13 +43,6 @@ set modelines=0       " modelines are bad for your health
 
 " maps // to search for selected text in visual mode
 vnoremap // y/<C-R>"<CR>
-
-" copy to OS X cplipboard
-" DOES NOT WORK WITH SIERRA AND TMUX
-" set clipboard=unnamed
-
-" no folding please
-set nofoldenable    
 
 " command autocomplete
 set wildmenu
@@ -83,6 +77,7 @@ set nocompatible
 
 " required
 filetype off                  
+filetype plugin indent on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -127,6 +122,12 @@ Plugin 'elzr/vim-json'
 " Log highlighting
 Plugin 'dzeban/vim-log-syntax'
 
+" perun colorscheme
+Plugin 'aradunovic/perun.vim'
+
+" yaml folding
+Plugin 'pedrohdz/vim-yaml-folds'
+
 call vundle#end()            
 
 " The Silver Searcher
@@ -149,9 +150,7 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR><CR>
 
 " Autostart NERDTree
 autocmd VimEnter * NERDTree
-
-" Go to previous (last accessed) window.
-autocmd VimEnter * wincmd p
+autocmd VimEnter * wincmd w
 
 " Quit if NERDTree is the last open buffer
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -160,4 +159,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:NERDTreeChDirMode       = 2
 let g:ctrlp_working_path_mode = 'rw'
 
-filetype plugin indent on    
+" Show hidden files by default
+let NERDTreeShowHidden=1
+
+" no folding please
+set nofoldenable
+
+" Colors
+colorscheme perun
