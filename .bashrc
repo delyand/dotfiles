@@ -14,11 +14,16 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# kubectl autocomplete
+if command -v kubectl > /dev/null
+then
+  source <(kubectl completion bash)
+else
+  echo Kubectl not installed.
+fi
+
 # vim for arc diff
 export EDITOR=vim
-
-# Homebrew options
-export HOMEBREW_CASK_OPTS=--caskroom=/opt/homebrew-cask/Caskroom
 
 alias 'ls'='ls -la'
 alias vim="/usr/local/bin/vim"
