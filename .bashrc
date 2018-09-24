@@ -26,5 +26,8 @@ fi
 export EDITOR=vim
 
 alias 'ls'='ls -la'
-alias vim="/usr/local/bin/vim"
+
+if [ -f /usr/local/bin/mvim ]; then
+  alias vim="/usr/local/bin/mvim"
+fi
 
